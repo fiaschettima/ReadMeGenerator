@@ -1,20 +1,22 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  var noSpaceLi = license.replace(/\s/g, '-');
+  var noSpaceLi = license.replace(/\s/g, '_');
   if(!license){
     return '';
   }
 
   else{
-    return `[![${license}](https://img.shields.io/badge/license-${noSpaceLi}-blue.svg)]
+    return `![${license}](https://img.shields.io/badge/license-${noSpaceLi}-blue.svg)
     `
+    
   }
 }
 // (https://opensource.org/licenses/${license})
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  console.log(license)
   var licUrl;
   switch(license){
     case 'MIT':
@@ -35,15 +37,18 @@ function renderLicenseLink(license) {
       case 'Mozilla Public License 2.0':
       licUrl = `https://https://opensource.org/licenses/MPL-2.0`
       break;
+      default: licUrl = '';
   }
-  return licUrl;
+  return `[${renderLicenseBadge(license)}](${licUrl})`;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return `## License
-   The License used for this project is: <br>[${renderLicenseBadge(license)}](${renderLicenseLink()})`
+   The License used for this project is: <br>
+   ${renderLicenseLink(license)}
+`
 }
 
 // TODO: Create a function to generate markdown for README
