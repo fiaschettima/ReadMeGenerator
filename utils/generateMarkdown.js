@@ -1,24 +1,49 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  var noSpaceLi = license.replace(/\s/g, '-');
   if(!license){
     return '';
   }
+
   else{
-    return `[![${license}](https://img.shields.io/badge/license-${license}-blue.svg)](https://opensource.org/licenses/${license})
+    return `[![${license}](https://img.shields.io/badge/license-${noSpaceLi}-blue.svg)]
     `
   }
 }
-
+// (https://opensource.org/licenses/${license})
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  var licUrl;
+  switch(license){
+    case 'MIT':
+      licUrl = `https://opensource.org/licenses/MIT`
+      break;
+    case 'Artistic':
+      licUrl = `https://https://opensource.org/licenses/Artistic-2.0`
+      break;
+    case 'Apache':
+      licUrl = `https://https://opensource.org/licenses/Apache-2.0`
+      break;  
+    case 'The Unlicense':
+      licUrl = `https://https://opensource.org/licenses/unlicense`
+      break;
+    case 'zLib License':
+      licUrl = `https://https://opensource.org/licenses/Zlib`
+      break;
+      case 'Mozilla Public License 2.0':
+      licUrl = `https://https://opensource.org/licenses/MPL-2.0`
+      break;
+  }
+  return licUrl;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return `## License
-   The License used for this project is: <br>${renderLicenseBadge(license)}`
+   The License used for this project is: <br>[${renderLicenseBadge(license)}](${renderLicenseLink()})`
 }
 
 // TODO: Create a function to generate markdown for README
@@ -60,7 +85,7 @@ ${renderLicenseSection(data.license)}
   ---
   ## Questions
 
-  ![GitHub Account:](https://github.com/${data.gitHubUser})
+  [ Link to GitHub Account](https://github.com/${data.gitHubUser})
 
 
   Email address: ${data.email}
