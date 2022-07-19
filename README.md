@@ -18,16 +18,15 @@ The Demo Gif was rushed to keep file size small, use link to Live video for more
 
 Here's a few quick links:
 
-* [Installation & Usage](#Installation-&-Usage)
+* [Installation and Usage](#Installation-and-Usage)
 * [Code Snippets](#code-snippets)
 * [Technology used](#technology-used)
 * [learning Points](#learning-points)
-* [Credits](#credits)
 * [License](#license)
 * [Author](#author)
 ---
 
-## Installation & Usage
+## Installation and Usage
 
 1. Navigate to the [GitHub Repository](https://github.com/fiaschettima/ReadMeGenerator) containing the ReadMe Generator files.
 2. Clone the Repository to your computer

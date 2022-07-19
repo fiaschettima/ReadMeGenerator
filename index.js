@@ -38,7 +38,7 @@ const questions = [
         name: 'license',
         type: 'list',
         message: 'choose a License',
-        choices: ['MIT', 'Artistic', 'Apache', 'The Unlicense', 'zLib License', 'Mozilla Public License 2.0'],
+        choices: ['MIT', 'Artistic', 'Apache', 'The Unlicense', 'zLib License', 'Mozilla Public License 2.0', 'None'],
     },
     {
         name: 'gitHubUser',
